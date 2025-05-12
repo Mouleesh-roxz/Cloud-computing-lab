@@ -1,34 +1,104 @@
 # Cloud-computing-lab
-# Install a C Compiler in a Virtual Machine using VirtualBox and Execute a Simple Program
-
-This project demonstrates how to install a C compiler inside a virtual machine (Ubuntu OS using VirtualBox), write a simple C program, compile it, and execute it successfully.
+Here's a sample `README.md` file for a GitHub repository that documents how to install a C compiler in a virtual machine using VirtualBox and execute a simple C program:
 
 ---
 
-## Requirements
+# 🖥️ C Compiler Setup in VirtualBox VM
 
-- Oracle VirtualBox
-- Ubuntu ISO (download from [ubuntu.com](https://ubuntu.com/download))
-- Internet connection inside VM
-- Basic terminal knowledge
+This repository contains step-by-step instructions to install a C compiler in a virtual machine (VM) using **VirtualBox** and run a simple C program.
 
----
+## 📋 Prerequisites
 
-## Step 1: Set Up the Virtual Machine
+Before starting, ensure you have the following installed:
 
-1. Download and install [VirtualBox](https://www.virtualbox.org/)
-2. Create a new virtual machine and load the Ubuntu ISO
-3. Complete Ubuntu installation with default settings
+* [VirtualBox](https://www.virtualbox.org/)
+* An ISO file for a Linux distribution (e.g., Ubuntu or Debian)
+* At least 10 GB of free disk space
+* Minimum 2 GB RAM for the VM
 
-*Screenshot: Ubuntu running inside VirtualBox*  
-![Ubuntu VM](screenshots/ubuntu_vm.png)
+## 🚀 Steps to Setup
 
----
+### 1. Create a New Virtual Machine
 
-## Step 2: Install the C Compiler (GCC)
+1. Open VirtualBox and click **New**.
+2. Enter a name (e.g., `C_Compiler_VM`).
+3. Choose **Linux** as the type and **Ubuntu (64-bit)** as the version.
+4. Assign memory (RAM) – recommended: **2048 MB**.
+5. Create a virtual hard disk – recommended: **10 GB (VDI)**.
 
-Open a terminal in the virtual machine and run:
+### 2. Install the Operating System
+
+1. Start the VM and select the downloaded **Linux ISO** when prompted.
+2. Follow the on-screen instructions to install the OS.
+3. Restart the VM after installation.
+
+### 3. Install the C Compiler
+
+Once inside the VM terminal, run the following commands:
 
 ```bash
 sudo apt update
 sudo apt install build-essential -y
+```
+
+> This installs the `gcc` compiler and other necessary build tools.
+
+### 4. Write and Run a Simple C Program
+
+1. Create a new C file:
+
+```bash
+nano hello.c
+```
+
+2. Paste the following code:
+
+```c
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+```
+
+3. Save and compile:
+
+```bash
+gcc hello.c -o hello
+```
+
+4. Run the program:
+
+```bash
+./hello
+```
+
+### ✅ Output
+
+You should see:
+
+```
+Hello, World!
+```
+
+## 📂 Repository Structure
+
+```
+.
+├── README.md          # This file
+└── hello.c            # Sample C program (optional)
+```
+
+## 🧠 Notes
+
+* You can use any lightweight Linux distro like Lubuntu for faster performance in VM.
+* Use `gedit`, `nano`, or `vim` as a text editor inside the VM.
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+Would you like a `hello.c` file and a screenshot example added as well?
